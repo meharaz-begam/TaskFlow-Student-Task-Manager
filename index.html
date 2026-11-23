@@ -1,0 +1,118 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskFlow - Student Task Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- LOGIN SECTION -->
+    <div class="auth-container" id="authSection">
+        <div class="auth-card">
+            <h1>TaskFlow.</h1>
+            <p>Your productivity starts here.</p>
+
+            <h2 id="authTitle">Welcome Back!</h2>
+
+            <input type="email" id="email"
+                placeholder="Enter Email">
+
+            <input type="password" id="password"
+                placeholder="Enter Password">
+
+            <button id="authButton">Login</button>
+
+            <p id="authMessage"></p>
+
+            <p class="switch-text">
+                New user?
+                <a href="#" id="switchAuth">Create Account</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- DASHBOARD SECTION -->
+    <div class="dashboard" id="dashboard" hidden>
+
+        <aside class="sidebar">
+            <h2>TaskFlow.</h2>
+
+            <nav>
+                <button class="nav-btn active" data-filter="all">Dashboard</button>
+                <button class="nav-btn" data-filter="all">My Tasks</button>
+                <button class="nav-btn" data-filter="pending">Pending</button>
+                <button class="nav-btn" data-filter="completed">Completed</button>
+            </nav>
+
+            <button id="logoutBtn" class="logout-btn">
+                Logout
+            </button>
+        </aside>
+
+        <main class="main-content">
+
+            <header class="topbar">
+                <div>
+                    <h1>Dashboard</h1>
+                    <p>Manage your daily activities.</p>
+                </div>
+                <span id="userEmail"></span>
+            </header>
+
+            <section class="stats">
+
+                <div class="stat-card">
+                    <p>Total Tasks</p>
+                    <h2 id="totalTasks">0</h2>
+                </div>
+
+                <div class="stat-card">
+                    <p>Completed</p>
+                    <h2 id="completedTasks">0</h2>
+                </div>
+
+                <div class="stat-card">
+                    <p>Pending</p>
+                    <h2 id="pendingTasks">0</h2>
+                </div>
+
+                <div class="stat-card">
+                    <p>Progress</p>
+                    <h2 id="progress">0%</h2>
+                </div>
+
+            </section>
+
+            <section class="task-section">
+
+                <h2>My Tasks</h2>
+
+                <div class="task-form">
+                    <input type="text" id="taskInput"
+                        placeholder="What needs to be done?">
+
+                    <select id="priority">
+                        <option value="Low">Low Priority</option>
+                        <option value="Medium">Medium Priority</option>
+                        <option value="High">High Priority</option>
+                    </select>
+
+                    <input type="date" id="dueDate">
+
+                    <button id="addTaskBtn">+ Add Task</button>
+                </div>
+
+                <div id="taskList"></div>
+
+            </section>
+
+        </main>
+    </div>
+
+    <script type="module" src="script.js"></script>
+
+</body>
+</html>
